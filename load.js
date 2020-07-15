@@ -1,13 +1,24 @@
-$(function () {
- $('#blog>ul>li>h3:first-child').each(function () {
-     //create div and insert it after the headline, this refers to headline
-     var $target = $('<div/>')
-     .insertAfter(this);
-     //now that the $target div exist, we can write the click handler
-     //that will load it -the $target variable is the closure
-     $(this).click(function (e){
-         e.preventDeafult();
-         $target.load(e.target.href.replace('#',' #'));
-     })
-   })
- })
+$(function() {
+    $('#blog>h3').each(function() {
+            // create the div
+        var $target = $("<div/>")
+            //this refers to each h3
+        var $this = $(this)
+            //insert newly-created div after this h3
+        $this.after($target)
+            //on user click, do the following...
+        .click(function(e) {
+            //without preventDefault
+            //page would reload
+        e.preventDefault();
+            //create the url from the href attr of 
+            //a-tag contained in h3
+        var url = $this.find('a:first')
+            //load method asks for space
+            //between url and id selector
+        .attr('href').replace('#', ' #');
+            //load the relevant div from blog.html
+        $target.load(url)
+            })
+    });
+});
