@@ -1,24 +1,46 @@
+// Iterate over all h2s on page, adding each h2
+// as a hash to the "titles" array. Use .push to
+// add each element; f
 $(function() {
-    $('#blog>h3').each(function() {
-            // create the div
-        var $target = $("<div/>")
-            //this refers to each h3
-        var $this = $(this)
-            //insert newly-created div after this h3
-        $this.after($target)
-            //on user click, do the following...
-        .click(function(e) {
-            //without preventDefault
-            //page would reload
-        e.preventDefault();
-            //create the url from the href attr of 
-            //a-tag contained in h3
-        var url = $this.find('a:first')
-            //load method asks for space
-            //between url and id selector
-        .attr('href').replace('#', ' #');
-            //load the relevant div from blog.html
-        $target.load(url)
-            })
-    });
-});
+    var titles = [];
+    
+    $('h2').each(function () {
+        titles.push({
+            label:$(this).html(),
+            url:$(this).attr('id')
+        })
+        console.log(titles)
+    })
+    // assign autocomplete to #q, with the source being
+    // the "titles" array and specifying that the select
+    //     event should redirect users to the appropriate
+    //     spot (e.g. '#fruit', '#blogtitle') on the page
+
+   $('#q').autocomplete({
+        source:titles,
+        select:function(event, ui) {
+            window.location.href='#' + ui.item.url
+        }
+    }),
+    // use animate to change the background and foreground
+    // color of table rows in the #fruits table at the
+    // bottom of the page 
+
+    $('table#fruits tr').hover(
+    
+        function() {
+            $(this).animate({
+                backgroundColor: "#600",
+                color: "#fff"
+            });    
+        },    
+        function() {
+            $(this).animate({
+                backgroundColor: "#fff",
+                color: "#000"
+            });    
+        }    
+    )    
+});    
+   
+

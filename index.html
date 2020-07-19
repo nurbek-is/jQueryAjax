@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 	<title>jQuery Fundamentals :: Home</title>
-	<link href="../../jqy-css/reset.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../../jqy-css/style.css" rel="stylesheet" type="text/css" media="all" />
-	
+	<link href="../../../jqy-css/reset.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../../jqy-css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" type="text/css" href="../../../jqy-libs/ui-lightness/jquery-ui-1.10.3.custom.min.css">
 	<style>
 	#blog p.excerpt { display: none; }
 	</style>
@@ -30,9 +30,8 @@
 	
 	<div id="main">
 		<form id="search">
-			<label for="q">Enter search term</label>
-			<input type="text" name="q" class="input_text" />
-			<input type="submit" value="Go" />
+			<label for="q">On this page</label>
+			<input type="text" name="q" id="q" class="input_text" />
 		</form>
 		
 		<h1>Eat here.</h1>
@@ -40,18 +39,18 @@
 
 		<ul id="slideshow">
 			<li>
-				<h2 rel="yummy fruit!">Fruit</h2>
-				<img src="../../jqy-images/fruit.jpg" alt="fruit" />
+				<h2 rel="yummy fruit!" id="fruit">Fruit</h2>
+				<img src="../../../jqy-images/fruit.jpg" alt="fruit" />
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</li>
 			<li>
-				<h2>Vegetables</h2>
-				<img src="../../jqy-images/vegetable.jpg" alt="vegetables" />
+				<h2 id="vegetables">Vegetables</h2>
+				<img src="../../../jqy-images/vegetable.jpg" alt="vegetables" />
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</li>
 			<li>
-				<h2>Bread</h2>
-				<img src="../../jqy-images/bread.jpg" alt="bread" />
+				<h2 id="bread">Bread</h2>
+				<img src="../../../jqy-images/bread.jpg" alt="bread" />
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</li>
 		</ul>
@@ -67,25 +66,25 @@
 		</ul>
 		
 		<div class="module" id="blog">
-			<h2>Blog</h2>
+			<h2 id="blogtitle">Blog</h2>
 			<ul>
 				<li>
-					<h3><a href="blog.html#post1">Blog post 1</a></h3>
+					<h3><a href="data/blog.html#post1">Blog post 1</a></h3>
 					<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</li>
 				<li>
-					<h3><a href="blog.html#post2">Blog post 2</a></h3>
+					<h3><a href="data/blog.html#post2">Blog post 2</a></h3>
 					<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</li>
 				<li>
-					<h3><a href="blog.html#post3">Blog post 3</a></h3>
+					<h3><a href="data/blog.html#post3">Blog post 3</a></h3>
 					<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</li>
 			</ul>
 		</div>
 		
 		<div class="module" id="specials">
-			<h2>Specials</h2>
+			<h2 id="specialstitle">Specials</h2>
 			<p>Choose the day of the week to see the specials:</p>
 			<form action="specials.html" method="get">
 				<ul>	
@@ -143,23 +142,8 @@
 
 	</div>
 	
-<script src="../../jqy-libs/jquery.js"></script> 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js'></script>
-
-<script>
-	$(function() {
-  $("#fruits").tablesorter();
-});
-</script>
-<!-- 
-<script src="js/sandbox.js"></script>
-<script src="js/hoverClass.js"></script>
-<script src="js/navigation.js"></script>
-<script src="js/blog.js"></script>
-<script src="js/specials.js"></script>
-<script src="js/slideshow.js"></script> 
-<script src="js/inputHint.js"></script>
-<script src="js/tabs.js"></script>
--->
+<script src="../../../jqy-libs/jquery.js"></script>
+<script src="../../../jqy-libs/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/load.js"></script>
 </body>
 </html>
